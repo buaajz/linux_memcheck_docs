@@ -9,14 +9,14 @@ Google的sanitizers一共有5种：
 Google sanitizers和其他内存工具的对比
 
 
-DBI: dynamic binary instrumentation
-CTI: compile-time instrumentation
-UMR: uninitialized memory reads
-UAF: use-after-free (aka dangling pointer)
-UAR: use-after-return
-OOB: out-of-bounds
-Guard Page: a family of memory error detectors (Electric fence or DUMA on Linux, Page Heap on Windows, libgmalloc on OS X)
-gperftools: various performance tools/error detectors bundled with TCMalloc. Heap checker (leak detector) is only available on Linux. Debug allocator provides both guard pages and canary values for more precise detection of OOB writes, so it's better than guard page-only detectors.
+- DBI: dynamic binary instrumentation
+- CTI: compile-time instrumentation
+- UMR: uninitialized memory reads
+- UAF: use-after-free (aka dangling pointer)
+- UAR: use-after-return
+- OOB: out-of-bounds
+- Guard Page: a family of memory error detectors (Electric fence or DUMA on Linux, Page Heap on Windows, libgmalloc on OS X)
+- gperftools: various performance tools/error detectors bundled with TCMalloc. Heap checker (leak detector) is only available on Linux. Debug allocator provides both guard pages and canary values for more precise detection of OOB writes, so it's better than guard page-only detectors.
 
 ## 检测结论
 
