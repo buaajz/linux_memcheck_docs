@@ -17,3 +17,16 @@ UAR: use-after-return
 OOB: out-of-bounds
 Guard Page: a family of memory error detectors (Electric fence or DUMA on Linux, Page Heap on Windows, libgmalloc on OS X)
 gperftools: various performance tools/error detectors bundled with TCMalloc. Heap checker (leak detector) is only available on Linux. Debug allocator provides both guard pages and canary values for more precise detection of OOB writes, so it's better than guard page-only detectors.
+
+## 检测结论
+
+Asan可以检测大部分内存问题。
+
+| 内存错误类型          | asan | efence | Heap-checker（gperftools） | GWP-ASan（tcmalloc） |
+|----------------------|------|--------|----------------------------|----------------------|
+| Use after free       | Y    | Y      | Y                          | N                    |
+| Heap buffer overflow| Y    | Y      | Y                          | N                    |
+| Stack buffer overflow| Y    | N      | N                          | N                    |
+| Global buffer overflow| Y    | N      | N                          | N                    |
+| Double free          | Y    | N      | N                          | N                    |
+| Memory leaks         | N    | N      | N                          | N                    |
