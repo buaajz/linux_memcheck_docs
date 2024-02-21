@@ -1,9 +1,14 @@
 ## 参考资料
 [查内存泄漏试试AScan](https://www.jianshu.com/p/9e85345e500b)
+
 https://gcc.gnu.org/onlinedocs/gcc-13.1.0/gcc/Instrumentation-Options.html
+
 https://github.com/google/sanitizers/wiki/AddressSanitizer
+
 https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer
+
 Address Sanitizer是谷歌的快速的内存错误检测工具，它非常快只拖慢程序2倍左右的速度。
+
 可以支持的内存检测：
 * Use after free
 * Heap buffer overflow
@@ -72,8 +77,11 @@ $BIN_PATH/gaia_diagnostic > /tmp/gaia_diagnostic_asan.log 2>&1 &
 ```
 
 方案二：为不修改启动脚本，我们将 sanitizer output同步输出到syslog中，通过查看/opt/log/syslog来定位是否有AddressSanitizer报错。
+
 AddressSanitizer flags:https://github.com/google/sanitizers/wiki/AddressSanitizerFlags
+
 Run-time flags设置方式：https://github.com/google/sanitizers/wiki/AddressSanitizerFlags
+
 1、环境变量 ASAN_OPTIONS
 2、函数 __asan_default_options
 设置Run-time flags：ASAN_OPTIONS环境变量添加log_to_syslog

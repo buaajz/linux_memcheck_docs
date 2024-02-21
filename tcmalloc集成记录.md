@@ -1,9 +1,12 @@
 ## tcmalloc概述
 tcmalloc有两个版本。分别为：
 1、https://google.github.io/tcmalloc/
+
 2、https://github.com/gperftools/gperftools
+
 第一个版本tcmalloc为主线，日常维护并应用于google，支持GWP-ASan工具。第二个版本tcmalloc是gperftools的一个基础组件。gperftools支持Heap-checker的内存检测工具。
 两者区别可参考：https://github.com/google/tcmalloc/blob/master/docs/gperftools.md
+
 gperftools介绍：
 gperftool是Google开源的一款非常的性能分析工具集。主要由四个组件组成：
 1、Tcmalloc内存分析器
@@ -13,10 +16,13 @@ gperftool是Google开源的一款非常的性能分析工具集。主要由四�
 ## tcmalloc原理介绍
 参考资料：
 https://goog-perftools.sourceforge.net/doc/tcmalloc.html
+
 https://blog.51cto.com/quantfabric/2568961
+
 ## gperftools Heap-checker工具内存检测
 ### gperftools编译
 https://github.com/gperftools/gperftools/releases
+
 下载最新源码包。
 ```
 cd /home/code/
@@ -42,12 +48,17 @@ HEAPCHECK=normal ./main
 ```
 HEAPCHECK除了nomal外，还可以选择strict或者draconian。
 参考：https://github.com/gperftools/gperftools/blob/master/docs/heap_checker.html
+
 ## tcmalloc GWP-ASan工具内存检测
 ### tcmalloc编译
 参考：https://google.github.io/tcmalloc/quickstart.html
+
 编译工具链可以选择gcc或clang，clang可以下载：https://github.com/llvm/llvm-project/releases/tag/llvmorg-17.0.1
+
 1、下载bazel，可以选择对应platform的版本：https://bazel.build/install/ubuntu
+
 2、下载tcmalloc源码：https://google.github.io/tcmalloc/
+
 3、编译tcmalloc：
 gcc：
 ```
