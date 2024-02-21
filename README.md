@@ -1,13 +1,16 @@
 # 运行时内存检测方案调研
+
 ## 方案汇总
+
 Google的sanitizers一共有5种：
 * AddressSanitizer (检查寻址问题) ：包含LeakSanitizer (检查内存泄漏问题)
 * ThreadSanitizer：检查数据竞争和死锁问题（支持C++和Go）
 * MemorySanitizer：检查使用未初始化的内存问题
 * HWASAN（Hardware-assisted AddressSanitizer）：AddressSanitizer的变种，相比AddressSanitizer消耗的内存更少。
 * UBSan：检查使用语言的UndefinedBehavior问题。
-Google sanitizers和其他内存工具的对比
 
+
+Google sanitizers和其他内存工具的对比&名词解释
 
 - DBI: dynamic binary instrumentation
 - CTI: compile-time instrumentation
