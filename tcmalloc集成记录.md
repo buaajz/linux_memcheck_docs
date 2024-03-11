@@ -49,6 +49,8 @@ HEAPCHECK=normal ./main
 HEAPCHECK除了nomal外，还可以选择strict或者draconian。
 参考：https://github.com/gperftools/gperftools/blob/master/docs/heap_checker.html
 
+https://gperftools.github.io/gperftools/heap_checker.html
+
 ## tcmalloc GWP-ASan工具内存检测
 ### tcmalloc编译
 参考：https://google.github.io/tcmalloc/quickstart.html
